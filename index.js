@@ -99,8 +99,6 @@ async function MainQuestions(){
                 ]);
                 const res = await pool.query(`INSERT INTO role (title, salary, department_id) values ($1, $2, $3);`, 
                 [answers.title, answers.salary, answers.department_id]);
-        
-                console.log('Role successfully added!'); 
                 MainQuestions(); 
             } catch(err){
                 console.log('Error occur try again', err);
@@ -173,7 +171,7 @@ async function MainQuestions(){
                     MainQuestions();
             
                 } catch(err){
-                    console.log('Error executing query', err);
+                    console.log('Error occured try again', err);
                 }
                 break;
             case 'View All Departments':
